@@ -1,1 +1,1 @@
-# Website-Professional-Nanodegree-Weather-App-Propject
+# Website-Professional-Nanodegree-Weather-App-Project
