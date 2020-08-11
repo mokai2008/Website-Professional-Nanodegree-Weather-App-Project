@@ -25,3 +25,8 @@ app.listen(port, () => {
   console.log(`server is running on port ${port}`);
 });
 
+// Creating Routes
+// GET Route
+app.get('/getdata', function (req, res) {
+  res.send(projectData);
+});
