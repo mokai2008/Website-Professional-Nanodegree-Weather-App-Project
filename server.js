@@ -33,9 +33,10 @@ app.get('/getdata', function (req, res) {
 
 // POST Route
 app.post('/postdata', function (req, res) {
-  res.send('POST RECIEVED');
   let data = req.body;
   projectData["temperature"] = data.temperature;
   projectData["date"] = data.date;
   projectData["user_response"] = data.user_response;
+
+  res.send(projectData);
 })
