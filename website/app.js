@@ -5,11 +5,12 @@ const apiKey = '&appid=f8525f1067c22f4d67db5c12a92dc983';
 /* Function called by event listener */
 const generateFunc = () => {
   const zip = document.getElementById('zip').value;
+  const country = document.getElementById('country').value;
   const feelings = document.getElementById('feelings').value;
   let d = new Date();
   let date = `${d.getMonth()}.${d.getDate()}.${d.getFullYear()}`;
 
-  getDataFromApi(baseUrl, zip, apiKey).then(temp => {
+  getDataFromApi(baseUrl, zip, country, apiKey).then(temp => {
     const data = {
       temperature: temp,
       date: date,
@@ -27,8 +28,8 @@ document.getElementById('generate').addEventListener('click', generateFunc);
 
 /* Function to GET Web API Data*/
 
-const getDataFromApi = async(url, zip, key) => {
-  const data = await fetch(`${url}${zip}${key}`);
+const getDataFromApi = async(url, zip, country, key) => {
+  const data = await fetch(`${url}${zip},${country}${key}`);
 
   try {
     const allData = await data.json();

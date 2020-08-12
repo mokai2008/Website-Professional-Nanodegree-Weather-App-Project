@@ -3,6 +3,10 @@ body{
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
+h1{
+    margin-top: 0;
+}
+
 #app{
     display: flex;
     justify-content: space-between;
@@ -38,21 +42,10 @@ body{
     justify-content: center;
 }
 
-#date{
-
+input, textarea {
+    border-radius: 5px;
 }
 
-#temp{
-
-}
-
-#content{
-
-}
-
-.headline {
-
-}
 .title{
     margin-bottom: 30px;
 }
