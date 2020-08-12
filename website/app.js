@@ -69,7 +69,7 @@ const ShowData = async() => {
   const allData = await data.json();
   document.getElementById('date').innerHTML = `Date: ${allData.date}`;
   document.getElementById('temp').innerHTML = `Temperature: ${allData.temperature}`;
-  document.getElementById('content').innerHTML = `Your Feelings: ${allData.user_response}`;
+  document.getElementById('content').innerHTML = `Content: ${allData.user_response}`;
   }catch(error) {
     console.log("error", error);
   }
