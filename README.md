@@ -10,9 +10,9 @@ Weather App project is a part of Web Development Professional Nanodegree. The pu
      3. npm install body-parser
 
 ## Contents
-Website Folder:
-  index.html, styles.css and app.js
-server.js file
+1. Website Folder:
+     index.html, styles.css and app.js
+2. server.js file
 
 ## Using App
 1. In the project folder open terminal and run command : node server.js
