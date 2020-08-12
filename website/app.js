@@ -1,3 +1,5 @@
+const { response } = require("express");
+
 // Personal API Key for OpenWeatherMap API
 const baseUrl = 'http://api.openweathermap.org/data/2.5/weather?zip=';
 const apiKey = '&appid=f8525f1067c22f4d67db5c12a92dc983';
@@ -9,7 +11,7 @@ const generateFunc = () => {
   let d = new Date();
   let date = `${d.getMonth()}.${d.getDate()}.${d.getFullYear()}`;
 
-  
+
 
 }
 
@@ -33,5 +35,23 @@ const getDataFromApi = async(url, zip, key) => {
 
 /* Function to POST data */
 
+const postData = async(url = '', data = {}) => {
+  const res = fetch(url, {
+    method: 'POST',
+    credentials: 'same-origin',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data)
+
+  });
+
+  try {
+    const newData = await res.json();
+    return newData;
+  }catch(error) {
+    console.log("error", error);
+  }
+}
 
 /* Function to GET Project Data */
