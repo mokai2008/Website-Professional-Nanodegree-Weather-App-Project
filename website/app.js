@@ -16,10 +16,10 @@ const generateFunc = () => {
       user_response: feelings
     };
 
-    postData('/postdata', data).then(data => console.log(data))
-  })
+    postData('/postdata', data).then(ShowData());
+  });
 
-}
+};
 
 // Event listener to add function to existing HTML DOM element
 document.getElementById('generate').addEventListener('click', generateFunc);
@@ -61,3 +61,15 @@ const postData = async(url = '', data = {}) => {
 }
 
 /* Function to GET Project Data */
+const ShowData = async() => {
+  const data = await fetch('/getdata');
+
+  try {
+  const allData = await data.json();
+  document.getElementById('date').innerHTML = allData.date;
+  document.getElementById('temp').innerHTML = allData.temperature;
+  document.getElementById('content').innerHTML = allData.user_response;
+  }catch(error) {
+    console.log("error", error);
+  }
+}
